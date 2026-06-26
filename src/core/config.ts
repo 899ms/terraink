@@ -61,6 +61,9 @@ export const ADS_MODAL_ENABLED = adTypeEnabled(
 
 export const ADSENSE_AD_CLIENT = import.meta.env.VITE_ADSENSE_AD_CLIENT ?? "";
 export const AD_SLOT_INFEED = import.meta.env.VITE_AD_SLOT_INFEED ?? "";
+// data-ad-layout-key for the in-feed (fluid) unit — generated in AdSense.
+export const AD_LAYOUT_KEY_INFEED =
+  import.meta.env.VITE_AD_LAYOUT_KEY_INFEED ?? "";
 export const AD_SLOT_SIDEBAR = import.meta.env.VITE_AD_SLOT_SIDEBAR ?? "";
 export const AD_SLOT_MODAL = import.meta.env.VITE_AD_SLOT_MODAL ?? "";
 

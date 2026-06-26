@@ -3,7 +3,11 @@ import ThemeCard from "./ThemeCard";
 import { EditIcon } from "@/shared/ui/Icons";
 import type { ThemeOption } from "../domain/types";
 import AdUnit from "@/shared/ui/AdUnit";
-import { AD_SLOT_INFEED, ADS_INFEED_ENABLED } from "@/core/config";
+import {
+  AD_SLOT_INFEED,
+  AD_LAYOUT_KEY_INFEED,
+  ADS_INFEED_ENABLED,
+} from "@/core/config";
 
 const AD_AFTER_NTH_CARD = 4;
 
@@ -70,6 +74,8 @@ export default function ThemeSummarySection({
                 key={`ad-theme-${i}`}
                 slot={AD_SLOT_INFEED}
                 enabled={ADS_INFEED_ENABLED}
+                format="fluid"
+                layoutKey={AD_LAYOUT_KEY_INFEED}
               />,
             ];
           }
