@@ -54,6 +54,10 @@
     padding: 0;
     margin: 0;
     height: 100vh;
+    /* AdSense forces `height: auto !important` on every ancestor of an ad;
+       min/max keep the shell one viewport tall regardless. */
+    min-height: 100vh;
+    max-height: 100vh;
     overflow: hidden;
     display: grid;
     grid-template-columns: 64px 1fr;
