@@ -100,6 +100,11 @@ function legalPagesPlugin() {
   const DOCS = [
     { slug: "privacy", envVar: "VITE_PRIVACY_URL", title: "Privacy Policy" },
     { slug: "imprint", envVar: "VITE_LEGAL_NOTICE_URL", title: "Imprint" },
+    {
+      slug: "privacy-app",
+      envVar: "VITE_PRIVACY_APP_URL",
+      title: "App Privacy Policy",
+    },
   ];
 
   let resolvedConfig;
