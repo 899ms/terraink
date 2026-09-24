@@ -154,15 +154,24 @@ ${body}
 
     if (!renderMarkdown) {
       // Imported lazily so a build that skips both docs pays nothing.
-      const [{ unified }, remarkParse, remarkRehype, rehypeStringify] =
-        await Promise.all([
-          import("unified"),
-          import("remark-parse"),
-          import("remark-rehype"),
-          import("rehype-stringify"),
-        ]);
+      const [
+        { unified },
+        remarkParse,
+        remarkBreaks,
+        remarkRehype,
+        rehypeStringify,
+      ] = await Promise.all([
+        import("unified"),
+        import("remark-parse"),
+        import("remark-breaks"),
+        import("remark-rehype"),
+        import("rehype-stringify"),
+      ]);
+      // remark-breaks matches the in-app LegalModal, so single line breaks
+      // (e.g. Purpose / Legal Basis) render the same on both.
       const processor = unified()
         .use(remarkParse.default)
+        .use(remarkBreaks.default)
         .use(remarkRehype.default)
         .use(rehypeStringify.default);
       renderMarkdown = async (markdown) =>
